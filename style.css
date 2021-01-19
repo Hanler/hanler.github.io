@@ -28,6 +28,17 @@ header{
 	box-shadow: 2px 3px 15px black;
 	transition: background 0.5s;
 }
+.menu-top_title{
+	color: #5b6770;
+	font-size: 1.2em;
+	margin: 5px 0;
+	text-align: center;
+	font-weight: 700;
+	font-family: 'Open Sans Condensed', sans-serif;
+	line-height: 40px;
+	transition: visibility 0.2s;
+	visibility: hidden;
+}
 .menu-top_wrapper{
 	display: flex;
 }
@@ -144,6 +155,7 @@ header{
 	top: 50px;
 	display: flex;
 	flex-direction: column;	
+	margin: 50px auto;
 }
 .wrapper-nav-con{
 	display: flex;
@@ -178,8 +190,10 @@ header{
 .content-bar{
 	width: 60%;
 	margin-top: 10px;
-	height: auto;
+	height: 100vh;
+	overflow-x: scroll;
 }
+.content-bar::-webkit-scrollbar { width: 0; }
 .sections{
 	width: 100%;
 	background-color: white;
