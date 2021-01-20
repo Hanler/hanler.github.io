@@ -13,7 +13,6 @@ document.getElementsByClassName("content-bar")[0].onscroll = function() {
                 else{
                     arr_state_of_sections[i]=true;
                 }
-                console.log(arr_state_of_sections);
         }
         for (var j = 0; j < 9; j++) {
             document.getElementsByClassName("blocks")[j].style.backgroundColor = "white";
