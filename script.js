@@ -27,24 +27,26 @@ window.onscroll = function() {
     // startem();
      if ((window.innerHeight/2) <= window.pageYOffset && state_of_top_menu==false){
              document.getElementById("bar_top").style.backgroundColor = "#f2f2f2";
-             document.getElementById("hamburger_menu").style.backgroundColor = "#5b6770";
+             document.getElementById("menu-top_wrapper_icon-button-unscrolled").style.backgroundColor = "#5b6770";
              document.getElementById("icon-menu").style.fill = "#f2f2f2";
              document.getElementById("logo").style.fill = "#ea6903";
              document.getElementById("logo-text").style.fill = "#5b6770";
              document.getElementById("share_but").style.backgroundColor = "#5b6770";
              document.getElementById("share-button").style.fill = "#f2f2f2";
              document.getElementById("menu_title").style.visibility = "visible";
+             document.getElementById("teleport").style.visibility = "visible";
              state_of_top_menu=true;
         }
         else if((window.innerHeight/2) >= window.pageYOffset && state_of_top_menu==true){
             document.getElementById("bar_top").style.backgroundColor = "transparent";
-             document.getElementById("hamburger_menu").style.backgroundColor = "#f2f2f2";
+             document.getElementById("menu-top_wrapper_icon-button-unscrolled").style.backgroundColor = "#f2f2f2";
              document.getElementById("icon-menu").style.fill = "#5b6770";
              document.getElementById("logo").style.fill = "#f2f2f2";
              document.getElementById("logo-text").style.fill = "#f2f2f2";
              document.getElementById("share_but").style.backgroundColor = "#f2f2f2";
              document.getElementById("share-button").style.fill = "#5b6770";
              document.getElementById("menu_title").style.visibility = "hidden";
+             document.getElementById("teleport").style.visibility = "hidden";
              state_of_top_menu=false;
         }
 }
