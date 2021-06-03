@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>H&F Weather</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/icofont/icofont.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">H&F Weather</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Меню</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Головна</a></li>
+											<li><a id="tp1" href="#one">Прогноз</a></li>
+											<li><a id="tp2" href="#cta">Моб. додаток</a></li>
+											<li><a id="tp3" href="#footer">Контакти</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>F&H Weather</h2>
+							<p>Дізнавайтеся актуальний<br />
+							прогноз погоди<br />
+							будь-де та будь-коли</p>
+							<ul class="actions special">
+								<li><a href="#" class="button primary disabled" title="Додаток на Андроід">Ми в Play market</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Дізнатися!</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="container-of-two-sections">
+						<div class="main-wrapper">
+							<div class="adapt-wrap">
+							<div class="wrapper-top">
+								<i class="icofont-location-pin"></i>
+								<p id="fillContent0" class="main-wrapper__p">Your location</p>
+							</div>
+							<div class="wrapper-mid">
+								<i class="icofont-clock-time"></i>
+								<p id="fillContent0" class="main-wrapper__p">Зараз</p>
+							</div>
+							</div>
+
+							<div class="wrapper-bottom">
+								<div class="wrapper-bottom__container">
+									<span class="wrapper-bottom__wrapper-image">
+										<img id="fillContent001" src="" alt="">
+									</span>
+									<p class="wrapper-bottom__temperature" id="fillContent01">--</p>
+									<span>
+										<p class="wrapper-bottom__Celcius">℃</p>
+										<p class="wrapper-bottom__weather" id="fillContent02">None</p>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="inner">
+							<header class="major">
+								<h2><span id="fillContent1"></span><br />
+								<span id="fillContent2"></span></h2>
+								<p>Інше місто? Уведіть у поле!</p>
+								<form class="form-which-city" action="">
+									<input id="formWhichCity" type="text" list="tips">
+									<datalist id="tips"></datalist>
+									<input class="form__btn" type="submit" onclick="sendAPI_City();return false;" value="&#xed1b;">
+								</form>
+							</header>
+						</div>
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+								<div class="spotlight__main-wrapper">
+									<div class="spotlight__left-wrapper">
+									<div class="wrapper-top">
+										<i class="icofont-location-pin icofont-location-pin-light"></i>
+										<p id="fillContent3" class="main-wrapper__p main-wrapper__p-light">Your location</p>
+									</div>
+									
+									<div class="wrapper-mid">
+										<i class="icofont-clock-time icofont-clock-time-light"></i>
+										<p class="main-wrapper__p main-wrapper__p-light">Через 3 години</p>
+									</div>
+									</div>
+
+									<div class="spotlight__right-wrapper">
+
+									<div class="wrapper-bottom__container">
+										<span class="wrapper-bottom__wrapper-image">
+										<img id="fillContent4" src="" alt="">
+									</span>
+									<p class="wrapper-bottom__temperature" id="fillContent5">--</p>
+									<span>
+										<p class="wrapper-bottom__Celcius">℃</p>
+										<p class="wrapper-bottom__weather" id="fillContent6">None</p>
+									</span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<div class="spotlight__main-wrapper">
+									<div class="spotlight__left-wrapper">
+									<div class="wrapper-top">
+										<i class="icofont-location-pin icofont-location-pin-light"></i>
+										<p id="fillContent7" class="main-wrapper__p main-wrapper__p-light">Your location</p>
+									</div>
+									
+									<div class="wrapper-mid">
+										<i class="icofont-clock-time icofont-clock-time-light"></i>
+										<p class="main-wrapper__p main-wrapper__p-light">Через добу</p>
+									</div>
+									</div>
+
+									<div class="spotlight__right-wrapper">
+
+									<div class="wrapper-bottom__container">
+										<span class="wrapper-bottom__wrapper-image">
+										<img id="fillContent8" src="" alt="">
+									</span>
+									<p class="wrapper-bottom__temperature" id="fillContent9">--</p>
+									<span>
+										<p class="wrapper-bottom__Celcius">℃</p>
+										<p class="wrapper-bottom__weather" id="fillContent10">None</p>
+									</span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+								<div class="spotlight__main-wrapper">
+									<div class="spotlight__left-wrapper">
+									<div class="wrapper-top">
+										<i class="icofont-location-pin icofont-location-pin-light"></i>
+										<p id="fillContent11" class="main-wrapper__p main-wrapper__p-light">Your location</p>
+									</div>
+									
+									<div class="wrapper-mid">
+										<i class="icofont-clock-time icofont-clock-time-light"></i>
+										<p class="main-wrapper__p main-wrapper__p-light">Через 2 доби</p>
+									</div>
+									</div>
+
+									<div class="spotlight__right-wrapper">
+
+									<div class="wrapper-bottom__container">
+										<span class="wrapper-bottom__wrapper-image">
+										<img id="fillContent12" src="" alt="">
+									</span>
+									<p class="wrapper-bottom__temperature" id="fillContent13">--</p>
+									<span>
+										<p class="wrapper-bottom__Celcius">℃</p>
+										<p class="wrapper-bottom__weather" id="fillContent14">None</p>
+									</span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Accumsan mus tortor nunc aliquet</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-paper-plane">
+									<h3>Arcu accumsan</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-laptop">
+									<h3>Ac Augue Eget</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-code">
+									<h3>Mus Scelerisque</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-headphones-alt">
+									<h3>Mauris Imperdiet</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-heart">
+									<h3>Aenean Primis</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-flag">
+									<h3>Tortor Ut</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Мобільний додаток</h2>
+								<p>У тебе IPhone чи Android? Неважливо!</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary disabled">Play Market</a></li>
+								<li><a href="#" class="button fit disabled">App Store</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.instagram.com/_hanler_/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="mailto:hmelnitzkij.danil85@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="tel:+380683600406" class="icon brands fa-viber"><span class="label">Twitter</span></a></li>	
+						</ul>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li><li>Made up by: <a href="">H&F Team</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
+
+	</body>
+</html>
