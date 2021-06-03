@@ -50,7 +50,7 @@ function sendAPI_City(){
   $("document").ready( function(){
     let promise = new Promise((resolve, reject) => {
 
-      $.get(`http://api.openweathermap.org/data/2.5/weather?q=${elem}&units=metric&appid=2de62d2b11192b2f43ec8020a5d64503
+      $.get(`https://api.openweathermap.org/data/2.5/weather?q=${elem}&units=metric&appid=2de62d2b11192b2f43ec8020a5d64503
 `,
       function(data){
         fillContent(data);
@@ -96,7 +96,7 @@ function success(pos) {
 
 function sendAPI(lat, long){
   $("document").ready( function(){
-    $.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=2de62d2b11192b2f43ec8020a5d64503`,
+    $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=2de62d2b11192b2f43ec8020a5d64503`,
     function(data){
       fillContent(data);
     });
