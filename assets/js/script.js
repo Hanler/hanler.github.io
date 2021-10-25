@@ -7,37 +7,43 @@ var latCoord;
 var lonCoord;
 var massCities = ["Кременчук","Полтава","Піщане","Потоки","Щербаки","Нова Галещина","Омельник","Миколаїв","Одеса","Харків","Кривий Ріг","Черкаси","Кропивницький","Чернігів","Дніпро","Суми","Вінниця","Хмельницький","Житомир","Рівне","Київ","Чернівці","Тернопіль","Івано-Франківськ","Львів","Луцьк","Херсон","Запоріжжя","Горішні Плавні","Біла Церква","Умань"];
 massCities.sort();
-elemDatalist = document.getElementById('tips');
-for (i = 0; i < massCities.length; i++){
+
+if($("#tips").length){
+  elemDatalist = document.getElementById('tips');
+  for (i = 0; i < massCities.length; i++){
       elemOption = document.createElement('option');
       elemOption.text = massCities[i];
       elemDatalist.appendChild(elemOption);
-    }
+  }
+}
+
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 1000 * 60 * 60 * 12
 };
-var currentValue = localStorage.getItem("coords");
-
-if (currentValue != null) {
-  var currentValue = localStorage.getItem("coords").split(";");
-}
-// console.log(currentValue[2]+"!!!!!!!!!!!!!!!!");
-// console.log(new Date());
-// console.log(Number(currentValue[2]) < Number(new Date()));
-if (currentValue === null) {
-  getPos();
-}
-else{
-  if (currentValue[2] < new Date()) {
-    localStorage.removeItem("coords");
+if($("#tips").length){
+  var currentValue = localStorage.getItem("coords");
+  if (currentValue != null) {
+    var currentValue = localStorage.getItem("coords").split(";");
+  }
+  
+  if (currentValue === null) {
     getPos();
   }
   else{
-    sendAPI(currentValue[0], currentValue[1]);
+    if (currentValue[2] < new Date()) {
+      localStorage.removeItem("coords");
+      getPos();
+    }
+    else{
+      sendAPI(currentValue[0], currentValue[1]);
+    }
   }
 }
+
+
+
 function getPos(){
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
@@ -117,33 +123,54 @@ function fillContent(arg){
     weatherMain = "Гроза";
     phrase1 = "Грохочет гром";
     phrase2 = "Сверкает молния в ночи";
+    $("#page-wrapper").addClass("back0");
+    $("#banner").addClass("back0");
+    $(".style4").addClass("back0");
     break;
   case "Drizzle":
     weatherMain = "Мряка";
     phrase1 = "Дождик, дождик, веселей!";
     phrase2 = "Капай, капай, не жалей! ";
+    $("#page-wrapper").addClass("back1");
+    $("#banner").addClass("back1");
+    $(".style4").addClass("back1");
     break;
   case "Rain":
     weatherMain = "Дощ";
     phrase1 = "Надо мною тишина";
     phrase2 = "Небо полное дождя";
+    $("#page-wrapper").addClass("back2");
+    $("#banner").addClass("back2");
+    $(".style4").addClass("back2");
     break;
   case "Snow":
     weatherMain = "Сніг";
     phrase1 = "Белый снег, серый лёд";
     phrase2 = "На растрескавшейся земле";
+    $("#page-wrapper").addClass("back3");
+    $("#banner").addClass("back3");
+    $(".style4").addClass("back3");
     break;
   case "Clear":
     weatherMain = "Ясно";
     phrase1 = "Мимо нас, мимо нас";
     phrase2 = "Пьяное солнце";
+    $("#page-wrapper").addClass("back4");
+    $("#banner").addClass("back4");
+    $(".style4").addClass("back4");
     break;
   case "Clouds":
     weatherMain = "Хмарно";
     phrase1 = "Облака - белокрылые лошадки";
     phrase2 = "Облака, что вы мчитесь без оглядки?";
+    $("#page-wrapper").addClass("back5");
+    $("#banner").addClass("back5");
+    $(".style4").addClass("back5");
     break;
   default:
+    $("#page-wrapper").addClass("default");
+    $("#banner").addClass("default");
+    $(".style4").addClass("default");
     weatherMain = arg.weather[0].main;
 }
   $("#fillContent1").text(phrase1);
@@ -208,6 +235,3 @@ $(function(){
     e.preventDefault();
   });
 });
-
-// $("#banner").css("background-image", 'linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/neba.jpg")');
-// $("body.is-mobile.landing .wrapper.style4").css("background-image", 'linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/neba.jpg")');

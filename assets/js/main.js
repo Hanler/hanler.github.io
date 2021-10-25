@@ -75,3 +75,34 @@
 		}
 
 })(jQuery);
+
+$(document).ready(function() {
+	var date = new Date();
+	var month = date.getMonth() + 1;
+	if(month < 3 || month == 12){
+		$("#seasonImage1").attr("src", "images/winter1.jpg");
+		$("#seasonImage2").attr("src", "images/winter2.jpg");
+		$("#seasonImage3").attr("src", "images/winter3.jpg");
+	}
+	else{
+		if(month < 6){
+			$("#seasonImage1").attr("src", "images/spring1.jpg");
+			$("#seasonImage2").attr("src", "images/spring2.jpg");
+			$("#seasonImage3").attr("src", "images/spring3.jpg");
+		}
+		else{
+			if(month < 9){
+				$("#seasonImage1").attr("src", "images/summer1.jpg");
+				$("#seasonImage2").attr("src", "images/summer2.jpg");
+				$("#seasonImage3").attr("src", "images/summer3.jpg");
+			}
+			else{
+				if(month < 12){
+					$("#seasonImage1").attr("src", "images/yellow1.jpg");
+					$("#seasonImage2").attr("src", "images/yellow2.jpg");
+					$("#seasonImage3").attr("src", "images/yellow3.jpg");
+				}
+			}
+		}
+	}
+});
